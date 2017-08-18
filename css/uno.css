@@ -992,8 +992,8 @@ em {
 blockquote {
 	margin: 1em 0;
 	padding: 2em 0;
-	background: #333333;
-	border: 1px solid #333232;
+	background: #f8f8f8;
+	border: 1px solid #eeeeee;
 	border-radius: 3px;
 	font-family: "Roboto Slab", serif;
 	font-weight: lighter;
@@ -1274,7 +1274,7 @@ hr {
 
 .btn, .navigation__item a {
 	padding: 10px 20px;
-	border: 1px solid #e25440;
+	border: 1px solid #212121;
 	border-radius: 20px;
 	font-size: .9em;
 	font-weight: bold;
