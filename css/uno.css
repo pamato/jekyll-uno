@@ -1274,13 +1274,13 @@ hr {
 
 .btn, .navigation__item a {
 	padding: 10px 20px;
-	border: 1px solid #212121;
+	border: 1px solid #e25440;
 	border-radius: 20px;
 	font-size: .9em;
 	font-weight: bold;
 	letter-spacing: 1px;
 	text-shadow: none;
-	color: #212121;
+	color: #e25440;
 	-webkit-font-smoothing: antialiased; }
 	.btn:hover, .navigation__item a:hover {
 		color: #b9301c;
@@ -1346,12 +1346,12 @@ nav {
 	.navigation__item a {
 		display: block;
 		position: relative;
-		border-color: #FFF;
-		color: #FFF;
+		border-color: #212121;
+		color: #212121;
 		opacity: .8; }
 		.navigation__item a:hover {
-			color: #FFF;
-			border-color: #FFF;
+			color: #424242;
+			border-color: #424242;
 			opacity: 1; }
 
 .navigation--social {
