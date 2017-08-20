@@ -25,7 +25,7 @@ defaults:
 # Build settings
 destination: _site
 paginate: 10
-permalink: /:title/
+permalink: /:year/:title/
 include: ["_pages"]
 markdown: kramdown
 highlighter: rouge
