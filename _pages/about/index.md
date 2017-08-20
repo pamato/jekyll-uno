@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: page
 title: About
 permalink: /about/
 ---
 
-## About
+# About
 
 WebJeda is a web designing company 
 .
