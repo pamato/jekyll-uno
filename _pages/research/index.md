@@ -4,13 +4,8 @@ title: Research
 permalink: /research/
 ---
 
-## Research
+**Published Research:** 
 
-WebJeda is a web designing company 
-.
-.
-.
+**Under Review:** 
 
-**Disclaimer:** This website is under constant modification. 
-If you find something isn't right then,
-I might be doing some change in the back-end.
+**Unpublished Manuscripts:** 
