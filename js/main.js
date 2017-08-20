@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
   })
 
-  if (window.location.hash && window.location.hash == '#research') {
+  if (window.location.hash && window.location.hash == 'research') {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
