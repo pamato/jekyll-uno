@@ -1,6 +1,6 @@
 ---
-layout: default
-title: About
+layout: post
+title: Research
 permalink: /research/
 ---
 
