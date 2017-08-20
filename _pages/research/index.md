@@ -4,7 +4,7 @@ title: Research
 permalink: /research/
 ---
 
-**Published Research:** 
+**Published:** 
 
 **Under Review:** 
 
