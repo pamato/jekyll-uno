@@ -1594,7 +1594,7 @@ input[type="tel"] {
 
 	.panel-cover__description {
 		display: block;
-		max-width: 1cm;
+		max-width: 300px;
 		margin: 0 auto; }
 
 	.panel-cover__divider--secondary {
