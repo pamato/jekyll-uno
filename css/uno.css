@@ -1234,6 +1234,9 @@ hr {
 .panel-cover__description {
 	margin: 0 30px; }
 
+.panel-cover__institution {
+	margin: 0 30px; }
+
 .panel-cover__divider {
 	width: 50%;
 	margin: 20px auto;
@@ -1572,6 +1575,10 @@ input[type="tel"] {
 	.panel-cover__description {
 		margin: 0 10px;
 		font-size: .9em; }
+		
+	.panel-cover__institution {
+		margin: 0 10px;
+		font-size: .9em; }
 
 	.navigation--social {
 		margin-top: 5px;
@@ -1593,6 +1600,11 @@ input[type="tel"] {
 		padding: 60px 10%; }
 
 	.panel-cover__description {
+		display: block;
+		max-width: 200px;
+		margin: 0 auto; }
+		
+	.panel-cover__institution {
 		display: block;
 		max-width: 200px;
 		margin: 0 auto; }
