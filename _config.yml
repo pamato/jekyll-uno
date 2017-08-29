@@ -1,7 +1,7 @@
 # Site settings
 title: Paulo Serôdio
-description:    'Institutions & Political Economy Research Group                              
-                 University of Barcelona' 
+description:    'Institutions & Political Economy Research Group'                              
+description:                 'University of Barcelona' 
 url: 'https://pamato.github.io/personal-webpage/'
 baseurl: '/personal-webpage/'
 # google_analytics: 'UA-XXXXXX-X'
