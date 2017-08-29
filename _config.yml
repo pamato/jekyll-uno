@@ -1,9 +1,7 @@
 # Site settings
 title: Paulo Serôdio
-description:
-    Block style: !!seq
-        - Mercury   # Rotates - no light/dark sides.
-        - Venus     # Deadliest. Aptly named.
+description: 'Institutions and Political Economy Research Group, 
+                Universitat de Barcelona'
 url: 'https://pamato.github.io/personal-webpage/'
 baseurl: '/personal-webpage/'
 # google_analytics: 'UA-XXXXXX-X'
