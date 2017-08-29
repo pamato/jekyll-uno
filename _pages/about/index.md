@@ -5,7 +5,7 @@ permalink: /about/
 published: true
 ---
 
-![](/rsz_paulo_bw.jpg)
+![](/_pages/about/rsz_paulo_bw.jpg)
 
 
 I'm a postdoctoral researcher at the Institutions and Political Economy Research Group, affiliated with the School of Economics of the University of Barcelona.
