@@ -1593,8 +1593,8 @@ input[type="tel"] {
 		padding: 60px 10%; }
 
 	.panel-cover__description {
-		display: table;
-		max-width: 600px;
+		display: block;
+		max-width: 300px;
 		margin: 0 auto; }
 
 	.panel-cover__divider--secondary {
