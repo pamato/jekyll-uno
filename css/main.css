@@ -1,5 +1,9 @@
-@import url(uno.css);
-@import url(monokai.css);
+/* @import url(uno.css);
+@import url(monokai.css);*/
+
+@import {{site.baseurl}}css/uno.css;
+@import {{site.baseurl}}css/monokai.css;
+
 
 /* Modifications */
 
