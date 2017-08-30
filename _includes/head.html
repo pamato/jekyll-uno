@@ -8,7 +8,6 @@
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | remove: '<p>' | remove: '</p>' }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="institution" content="{{ site.institution }}">
   <meta name="author" content="{{ site.author.name }}">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -27,7 +26,6 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | remove: '<p>' | remove: '</p>' }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:institution" content="{% if page.excerpt %}{{ page.excerpt | remove: '<p>' | remove: '</p>' }}{% else %}{{ site.institution }}{% endif %}">
   <meta property="og:image" content="{{ site.baseurl }}/images/favicons/favicon-194x194.png" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="{{ "images/favicons/apple-touch-icon-57x57.png" | prepend: site.baseurl }}">
