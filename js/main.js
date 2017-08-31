@@ -21,13 +21,13 @@ $(document).ready(function () {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }*/
   
-  if (window.location.pathname == '{{ site.baseurl }}research' {
+  if (window.location.pathname == '{{ site.url }}research' {
     $('.panel-cover').addClass('panel-cover--collapsed') 
   }
 
-  if (window.location.pathname !== '{{ site.baseurl }}' && window.location.pathname !== '{{ site.baseurl }}index.html') {
-    /*$('.panel-cover').addClass('panel-cover--collapsed')*/
-    $('.panel-cover').addClass('panel-cover') 
+  if (window.location.pathname !== '{{ site.url }}' && window.location.pathname !== '{{ site.baseurl }}index.html') {
+    /*$('.panel-cover').addClass('panel-cover')*/
+    $('.panel-cover').addClass('panel-cover--collapsed') 
   }
 
   $('.btn-mobile-menu').click(function () {
