@@ -24,7 +24,7 @@ $(document).ready(function () {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }*/
   
-  if (window.location.pathname == '{{ site.baseurl }}research' {
+  if (window.location.pathname == 'http://pauloserodio.com/research' {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
