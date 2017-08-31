@@ -1,8 +1,7 @@
 ---
-layout: default
+layout: null
 sitemap:
   exclude: 'yes'
-published: true
 ---
 $(document).ready(function () {
   $('a.blog-button').click(function (e) {
@@ -17,13 +16,12 @@ $(document).ready(function () {
     }
   })
 
-  if (window.location.hash && window.location.hash == '{{ site.baseurl }}research') {
+  if (window.location.hash && window.location.hash == '#research') {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
-  
+
   if (window.location.pathname !== '{{ site.baseurl }}' && window.location.pathname !== '{{ site.baseurl }}index.html') {
-    /*$('.panel-cover').addClass('panel-cover')*/
-    $('.panel-cover').addClass('panel-cover--collapsed') 
+    $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
   $('.btn-mobile-menu').click(function () {

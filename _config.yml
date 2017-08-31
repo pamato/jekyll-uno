@@ -2,7 +2,7 @@
 title: Paulo Serôdio
 description: 'Institutions and Political Economy Research Group (IPErG),
                 School of Economics, University of Barcelona'
-url: 'https://pauloserodio.com/'
+url: 'https://pauloserodio.com'
 baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
@@ -26,8 +26,8 @@ defaults:
 # Build settings
 destination: _site
 paginate: 10
-permalink: /:title/
-include: ["_pages"]
+permalink: /:year/:title/
+#include: ["_pages"]
 markdown: kramdown
 highlighter: rouge
 
