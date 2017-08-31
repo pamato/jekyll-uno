@@ -20,13 +20,13 @@ $(document).ready(function () {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
 
-  if (window.location.pathname !== '{{ site.baseurl }}' && window.location.pathname !== '{{ site.baseurl }}index.html') {
+  /*if (window.location.pathname !== '{{ site.baseurl }}' && window.location.pathname !== '{{ site.baseurl }}index.html') {
+    $('.panel-cover').addClass('panel-cover--collapsed')
+  }*/
+  
+  if (window.location.pathname == '{{ site.baseurl }}research' {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
-  
-  /*if (window.location.pathname == '{{ site.url }}' {
-    $('.panel-cover').addClass('panel-cover')
-  }*/
 
   $('.btn-mobile-menu').click(function () {
     $('.navigation-wrapper').toggleClass('visible animated bounceInDown')
