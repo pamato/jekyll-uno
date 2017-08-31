@@ -1,11 +1,16 @@
----
-layout: default
-title: Research
-permalink: /research/
----
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
 
-**Published:** 
+  <body>
+    {% include header.html %}
 
-**Under Review:** 
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        {{ content }}
+      </div>
 
-**Unpublished Manuscripts:** 
+      {% include footer.html %}
+    </div>
+  </body>
+</html>
