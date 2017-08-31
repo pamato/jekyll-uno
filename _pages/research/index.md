@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default.html
 title: Research
 permalink: /research/
 ---
