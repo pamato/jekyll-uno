@@ -21,10 +21,6 @@ $(document).ready(function () {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }*/
   
-  if (window.location.pathname == 'pauloserodio.com/research/' {
-    $('.panel-cover').addClass('panel-cover--collapsed') 
-  }
-
   if (window.location.pathname !== '{{ site.url }}' && window.location.pathname !== '{{ site.url }}/index.html') {
     /*$('.panel-cover').addClass('panel-cover')*/
     $('.panel-cover').addClass('panel-cover--collapsed') 
