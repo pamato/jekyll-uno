@@ -37,15 +37,15 @@
               </li>
             {% endif %}
 
-            {% if site.author.facebook_username %}
+            <!-- {% if site.author.facebook_username %} -->
               <!-- Facebook -->
-              <li class="navigation__item">
+             <!-- <li class="navigation__item">
                 <a href="http://fb.me/{{ site.author.facebook_username }}" title="{{ site.author.facebook_username }} on Facebook" target="_blank">
                   <i class="icon icon-social-facebook"></i>
                   <span class="label">Facebook</span>
                 </a>
               </li>
-            {% endif %}
+            {% endif %} -->
 
             {% if site.author.linkedin_username %}
               <!-- LinkedIn -->
@@ -77,14 +77,16 @@
               </li>
             {% endif %}
 
-            <!-- RSS -->
+            <!-- CV -->
             <li class="navigation__item">
-              <a href="{{ "feed.xml" | prepend: site.baseurl }}" title="Subscribe" target="_blank">
-                <i class="icon icon-rss"></i>
-                <span class="label">RSS</span>
+              <a href= "{{ "files/cv_serodio.pdf" | prepend: site.baseurl }}" title="Subscribe" target="_blank">
+                <i class="icon icon-pdf"></i>
+                <span class="label">CV</span>
               </a>
             </li>
           
+
+              
             </ul>
           </nav>
 
