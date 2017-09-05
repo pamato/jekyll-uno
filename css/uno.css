@@ -512,6 +512,9 @@ body {
 .icon-paypal:before {
 	content: "\f193"; }
 
+.icon-pdf:before {
+	content: "\f1c1"; }
+
 .icon-pencil:before {
 	content: "\f194"; }
 
