@@ -82,13 +82,15 @@ swoc <- function(x,k){
       final.data <- final.data[rep(seq_len(nrow(final.data)), length(funding.info)), ]
       dat <- data.frame(funding_agency = rep(NA, length(funding.info)), grant_number=  rep(NA, length(funding.info)))
       for (j in 1:length(funding.info)){
-        fa <- as.matrix(unlist(strsplit(gsub("\n\n", "", funding.info[j]),"\n")))
-        fa <- as.matrix(fa[-which(fa==""),])
-        if(nrow(fa)== 1){dat$funding_agency[j] <- fa[1]
-        } else { 
-          dat$funding_agency[j] <- fa[1]
-          dat$grant_number[j] <- fa[2]
-        }
+          fa <- as.matrix(unlist(strsplit(gsub("\n\n", "", funding.info[j]),"\n")))
+          if(length(which(fa==""))>0){
+              fa <- as.matrix(fa[-which(fa==""),])
+          }else{fa <- trim(fa)}
+          if(nrow(fa)== 1){dat$funding_agency[j] <- fa[1]
+          } else {
+              dat$funding_agency[j] <- fa[1]
+              dat$grant_number[j] <- fa[2]
+          }
       }
       final.data$funding_agency <- dat$funding_agency
       final.data$grant_number <- dat$grant_number
