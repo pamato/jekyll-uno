@@ -23,6 +23,14 @@ $(document).ready(function () {
   if (window.location.pathname && window.location.pathname == '/research') {
     $('.panel-cover').addClass('panel-cover--collapsed')
   }
+  
+  if (window.location.hash && window.location.hash == '#eui2018') {
+    $('.panel-cover').addClass('panel-cover--collapsed')
+  }
+  
+  if (window.location.pathname && window.location.pathname == '/eui2018') {
+    $('.panel-cover').addClass('panel-cover--collapsed')
+  }
 
 /*
 if (window.location.pathname && window.location.pathname == '{{ site.url }}') {
