@@ -18,3 +18,7 @@ layout: default
   {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
 </article>
 {% if page.comments != false %}{% include disqus.html %}{% endif %}
+
+{% for post in site.posts %}
+<img src="{{ site.baseurl }}/{{ post.img }}">
+{% endfor %}
