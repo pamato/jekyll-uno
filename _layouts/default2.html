@@ -1,24 +1,16 @@
 <!DOCTYPE html>
+<html>
+  {% include head.html %}
 
-<html lang="{{ site.lang | default: "en-US" }}">
-    <head>
-        <meta charset="UTF-8">
-            
-            {% seo %}
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-                <meta name="theme-color" content="#157878">
-                    
-    </head>
-    <body>
-        
-        <main>
-            
-            {{ content }}
-            
-        </main>
-        
-        <script src="{{site.baseurl}}/scripts.js"></script>
-    </body>
-    
+  <body>
+    <!-- {% include header.html %} -->
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        {{ content }}
+      </div>
+
+      {% include footer.html %}
+    </div>
+  </body>
 </html>
-
