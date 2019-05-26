@@ -1,0 +1,7 @@
+egonet-package          Tool for ego-centric measures in Social Network
+                        Analysis
+index.egonet            Compute Burt's indexes (effective size and
+                        aggregate constraint) and other measure from
+                        sna package
+read.egonet             Reads ego-centric graph in table format and
+                        creates a matrix suitable for SNA.

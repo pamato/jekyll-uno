@@ -1,0 +1,6 @@
+"0","library(blockmodeling)
+"
+"2","package ‘blockmodeling’ was built under R version 3.5.2"
+"2","Error: package or namespace load failed for ‘blockmodeling’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
+ there is no package called ‘rngtools’
+"

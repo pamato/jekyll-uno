@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1558410499643.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BFACA5EB",
+    "lastKnownWriteTime" : 8454153044932689926,
+    "last_content_update" : 1558410499643,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "AB4290C1",
+        "caption" : "peterson",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=peterson&cache_key=AB4290C1",
+        "displayedObservations" : 165006,
+        "environment" : "",
+        "object" : "peterson",
+        "preview" : 0,
+        "totalObservations" : 165006,
+        "variables" : 42
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

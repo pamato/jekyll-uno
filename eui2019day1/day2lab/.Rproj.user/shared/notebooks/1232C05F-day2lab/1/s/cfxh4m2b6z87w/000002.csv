@@ -1,0 +1,5 @@
+"0","blk_mod <- sna::blockmodel(net, blks$block)
+"
+"2","Error in as.sociomatrix.sna(dat, simplify = TRUE) : 
+  object 'net' not found
+"

@@ -1,0 +1,6 @@
+"0","install.packages(""./packages/egonet"", repos = NULL, type = ""source"")
+"
+"2","* installing *binary* package ‘egonet’ ...
+"
+"2","* DONE (egonet)
+"

@@ -1,0 +1,21 @@
+"0","year <- seq(2012, 2013, by=1)
+for (y in year){
+  edgelist.name <- paste(""matrix"", y, sep=""."")
+  attr.name <- paste(""attr"", y, sep=""."")
+  net.name <- paste(""net"", y, sep=""."")
+  edgelist.data <- as.matrix(table(rio::import(paste(""./data/edgelist"", y, "".dta"", sep=""""))))
+  edgelist.data <- edgelist.data %*% t(edgelist.data)
+  diag(edgelist.data) <- 0
+  edgelist.data[edgelist.data > 1] <- 1
+  attr.data <- rio::importread.dta(paste(""./data/attr"", y, "".dta"", sep=""""), convert.factors=F)
+  network <- network::network(edgelist.data, directed=FALSE,ignore.eval=FALSE,names.eval='grants')
+  #edgelist.data <- edgelist.data[-isolates(network), -isolates(network)] # remove isolates
+  #attr.data <- attr.data[-]
+  assign(edgelist.name, value = edgelist.data)
+  assign(attr.name, value=attr.data)
+  assign(net.name, value=network)
+  rm(edgelist.data, attr.data, attr.name, edgelist.name, network, net.name)
+}
+"
+"2","Error: 'importread.dta' is not an exported object from 'namespace:rio'
+"

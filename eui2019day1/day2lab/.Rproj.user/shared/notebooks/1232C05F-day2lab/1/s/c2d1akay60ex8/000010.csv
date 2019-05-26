@@ -1,0 +1,29 @@
+"0","igraph::V(g)$color <- igraph::V(g)$faction
+igraph::V(g)$color <- gsub(""medici"",""gold"",igraph::V(g)$color) # Medici are gold
+igraph::V(g)$color <- gsub(""oligarchs"",""blue"",igraph::V(g)$color) # Oligarchs are blue
+igraph::V(g)$color <- gsub(""split"",""gray70"",igraph::V(g)$color) # Split affiliat ion is gray
+igraph::V(g)$color
+"
+"1"," [1]"
+"1"," ""gold""  "
+"1"," ""gray70"""
+"1"," ""gray70"""
+"1"," ""blue""  "
+"1"," ""blue""  "
+"1"," ""gold""  "
+"1"," ""blue""  "
+"1"," ""blue""  "
+"1"," ""gold""  "
+"1"," ""gold""  "
+"1","
+"
+"1","[11]"
+"1"," ""blue""  "
+"1"," ""gold""  "
+"1"," ""gold""  "
+"1"," ""gray70"""
+"1"," ""blue""  "
+"1"," ""gold""  "
+"1","
+"
+"0","igraph::plot.igraph(g, layout=igraph::layout.fruchterman.reingold, vertex.label.cex=0.75)"

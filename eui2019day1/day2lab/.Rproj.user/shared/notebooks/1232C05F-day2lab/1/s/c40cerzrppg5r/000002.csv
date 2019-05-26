@@ -1,0 +1,6 @@
+"0","blks <- concor_hca(list(mat), p=2)
+"
+"2","the standard deviation is zero"
+"2","Error in while (any(abs(mi) <= cutoff) & iter <= max.iter) { : 
+  missing value where TRUE/FALSE needed
+"

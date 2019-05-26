@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Social Network Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paulo Serôdio" />
+    <meta name="date" content="2019-05-20" />
+    <link href="day1slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <script src="day1slides_files/kePrint-0.0.1/kePrint.js"></script>
+    <link rel="stylesheet" href="mymetropolis.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Social Network Analysis
+## Network Data, Centrality, Transitivity, Clustering
+### Paulo Serôdio
+### 2019-05-20
+
+---
+
+#  Goals of this Seminar 
+
++ Introduction to Core Social Network Concepts
+	+ Overview of the field and the tools
+	+ Mathematical foundations
+	+ SNA Data &amp; Survey Design
+	+ Centrality
+	+ Social Capital
+	+ Cohesion
+	+ Subgroups
+	+ Equivalence (Role &amp; Position)
+	+ Hypotheses testing
++ Introduction to network analysis in R
+
+---
+#  Structure of the Course 
+
++ **Monday** : Introduction, Global &amp; Local Network properties
+	+ Algebra
+	+ Graph theory
+	+ Network data
+	+ Centrality &amp; Centralization
+	+ Transitivity &amp; Clustering
++ **Tuesday** : Social Capital, Brokerage and Equivalences
++ **Wednesday** : Cohesion, hypothesis testing and inferential networks
+
+---
+
+# Objectives of the course
+
+- Build intuition
+- Expose key concepts
+- Highlight big questions
+- provide abstract examples
+- Some pointers to other studies
+- *NOT* a substitute for technical work
+
+---
+#  Introduction 
+
++ Name
++ Affiliation
++ Discipline
++ SNA Experience/Knowledge
++ Phenomena of interest
+
+---
+
+&lt;img src="assets/img/image3.gif" width="70%" /&gt;
+
+---
+# shortest path Amersham to Woolwich Arsenal
+
+&lt;img src="assets/img/image4.png" width="70%" /&gt;
+
+---
+
+And people understand them intuitively
+
+---
+
+&lt;img src="assets/img/image5.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="assets/img/image6.png" width="100%" /&gt;
+
+
+---
+
+&lt;img src="assets/img/image7.jpeg" width="70%" /&gt;
+
+---
+#  Growth in Multiple Areas 
+
++ Pop Culture
+	+ Kevin Bacon
+	+ Online “social network sites”
++ Business Practitioners
+	+ New consulting tools
+	+ Knowledge management
++ Academics
+	+ In multiple fields from communication to epidemiology
+![](assets/img/image8.jpeg){width=10px}
+
+---
+#  What Defines SNA? 
+
++ Phenomenon studied
+	+ distinctive type of data
++ Perspective taken
+	+ Perhaps one perspective, but multiple theories
++ Methodological toolkit
+	+ new concepts, new tools
+
+
+---
+#  Reasoning about Networks 
+
++ What can achieve from studying networks?
+	+ Patterns and statistical properties of network data;
+	+ Design principles and models;
+	+ Understand the organisation of networks;
++ How can we reason about networks?
+	+ **Empirical** : study data; measure and quantify;
+	+ **Mathematical** Models: graph theory &amp; stats, distinguish surprising from expected phenomena
+	+ **Algorithms** : for hard computational challenges
+
+---
+
+# how mathematicians reason about networks
+
+- Mathematicians are concerned with the abstract structure of a graph
+
+- Mathematicians define operations to analyze and manipulate graphs. Moreover, they develop theorems based upon structural axioms.
+
+&lt;img src="assets/img/image9.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# how physicists reason about networks
+
+- Physicists are concerned with modeling real-world structures with networks.
+
+- Physicists define algorithms that compress the information in a network to more simple values (e.g. statistical analysis). 
+
+
+&lt;img src="assets/img/image10.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="assets/img/image12.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# Much of the World has a Graphical/Network Structure
+
+- **Social networks**: define how persons interact (collaborators, friends, kins).
+- **Biological networks**: define how biological components interact (protein, food chains, gene regulation).
+- **Transportation networks**: define how cities are joined by air and road routes.
+- **Dependency networks**: define how software modules use each other.
+- **Communication networks**: define the relationships between Internet
+routers.
+- **Language networks**: define the relationships between words.
+
+---
+#  History of SNA 
+
++ 1736- Euler
++ 1930s- Sociometry
++ 1940s Psychologists
++ 1950s &amp; 60s Anthropologists
++ 1970s Rise of Sociologists
+	+ Small Worlds, Strength of weak ties
++ 1980s IBM computation
+	+ Computer programs developed
++ 1990s Ideas spread
+	+ UCINET released, spread of network analyis to multiple fields, social capital, embedded ties
++ 2000s Physicists jump on the bandwagon
+
+
+
+---
+#  What is a Network? 
+
++ A set of dyadic ties all of the same type, among a set of actors ( nodes )
+&lt;img src="assets/img/image14.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+#  Popular Social Network Theories 
+
++ Small World Phenomenon (6 degrees of separation)
++ Strength of Weak Ties (information diffusion; job market)
++ Embeddedness  (“What would economic life be like if people didn’t have social relationships?”)
++ Social Capital (cooperation and social networks have value)
+
+
+---
+#  Relations Matter 
+
+
+Attributes vs. Relations (Discovery of HIV: sexual contact among gay men with unusual cancer, traced by Darrow at the CDC)
+
+&lt;img src="assets/img/image15.png" width="50%" style="display: block; margin: auto;" /&gt;
+---
+# Structure Matters
+
+Medieval trade in Russian rivers
+
+![](assets/img/image17.jpeg)
+
+---
+
+![](assets/img/image18.jpeg)
+
+
+---
+#  Why Study Networks? 
+
++ Prevent the spread of disease
++ Make the world a better place
++ Improve organizational effectiveness
+
+---
+#  Prevent the spread of disease 
+
+&lt;img src="assets/img/image19.png" width="70%" style="display: block; margin: auto;" /&gt;
+---
+#  Improve Organizational Outcomes 
+
+![](assets/img/image20.png)
+
+---
+#  Make the World A Better Place 
+
+![](assets/img/image21.png)
+
+
+---
+#  Tools &amp; Software 
+
++ DISCLAIMER:
+	+ This course focuses on **R** software and, if there is time, **Gephi** . They are not the only tools out there for social network analysis and visualization, but, they are very popular and have a nice balance of usability and capability
+
+---
+#  Other (beginner) Software tools 
+
++ UCINET + NetDraw
+	+ *The** social network analysis software
++ Domain specific
+	+ SIENA (time series analysis of networks)
+	+ Pajek (Better at computational analysis of really large networks)
+	+ E-Net (analyzing ego networks)
+	+ KeyPlayer (influencing or disrupting networks)
+
+---
+#  Defining &amp; Describing a network 
+
++ In social network analysis, we draw on two major areas of mathematics  regularly:
+	+ **Matrix  Algebra**
+		+ Tables of  numbers
+		+ Operations on matrices enable us to draw conclusions  we couldn’t just  intuit
+	+ **Graph  Theory**
+		+ Branch of discrete math that deals with collections of  ties among nodes and gives us concepts like  paths
+
+---
+#  Network vs. Case Perspective 
+
++ One of the biggest differences between the SNA perspective and more traditional social  science perspectives is the nature of the  data
+	+ Instead of individual cases, where we collect the same information for a bunch of  people
+	+ Here, we collect information about the interaction  of pairs of  people
+
+---
+#  Mainstream Logical Data Structure 
+
++ 2-mode rectangular matrix in which rows (cases) are entities or  objects and columns  (variables) are  attributes of the  cases
++ Analysis consists of  correlating  columns
+  + Emphasis on explaining  one  variable
+
+&lt;table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Education &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Salary &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+#  Network Logical Data Structures 
+
+&lt;img src="assets/img/image22b.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+#  representing networks – simple undirected 
+
+&lt;img src="assets/img/image23.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+#  representing networks – complex 
+
+&lt;img src="assets/img/image24.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# representing networks – directed networks
+
+&lt;img src="assets/img/image25.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# representing networks – bipartite networks
+
+&lt;img src="assets/img/image26.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# describing networks
+
+&lt;img src="assets/img/image27.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# describing networks
+
+&lt;img src="assets/img/image28.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# describing networks
+
+&lt;img src="assets/img/image29.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# describing networks
+
+
+&lt;img src="assets/img/image30.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+# representing networks – link types
+
+
+&lt;img src="assets/img/image31.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# representing networks – network modes
+
+&lt;img src="assets/img/image32.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# representing networks – directed networks
+
+
+&lt;img src="assets/img/image33.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# representing networks – symmetric networks
+
+
+&lt;img src="assets/img/image34.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# representing networks – affiliation networks
+
+
+&lt;img src="assets/img/image34.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# Matrix Algebra
+
+In this section, we will cover:
+
+- Matrix Concepts, Notation &amp; Terminologies
+- Adjacency Matrices
+- Transposes
+- Matrix Operations
+
+
+---
+#  Matrices 
+
++ Symbolized by a capital letter, like  A
++ Each cell in the matrix identified by row and  column  subscripts: a ij
+  + First subscript is row, second is  column
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Income &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mary &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; a_11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bill &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; a_32 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Larry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+#  Vectors 
+
++ Each row and each column in a matrix is  a  vector
++ – Vertical vectors are column vectors, horizontal are  row  vectors
++ Denoted by lowercase bold letter:  **y**
++ Each cell in the vector identified by subscript `\(x_i\)`
+
+
+---
+#  Ways and Modes 
+
++ Ways are the dimensions of a  matrix.
++ Modes are the sets of entities indexed by the ways of a  matrix
+
+&lt;img src="assets/img/image36b.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+---
+#  Proximity Matrices 
+
++ Proximity Matrices record “degree of  proximity”.
++ Proximities are usually among a single set of actor (hence, they are  1-mode), but they are not limited to 1s and 0s in the  data.
++ What constitutes the *proximity* is  user-defined.
+	+ Driving distances are one form of proximities, other forms might be  number of friends in common, time spent together, number of emails  exchanged, or a measure of similarity in cognitive  structures.
+	
+---
+
+#  Proximity Matrices 
+
++ Proximity matrices can contain either *similarity* or *distance*  (or *dissimilarity* )  data.
+	+ Similarity data, such as number of friends in common or correlations,  means a larger number represents more similarity or greater  proximity
+	+ Distance (or dissimilarity data) such as physical distance means a larger number represents more dissimilarity or less  proximity
+
+---
+#  Transposes 
+
++ The transpose `\(M^'\)` of a matrix `\(M\)` is the matrix flipped on its side.
+	+ The rows become columns and the columns become  rows
+	+ So the transpose of an m by n matrix is an n by m  matrix.
+
+
+---
+#  Transpose Example
+
+&lt;img src="assets/img/image37b.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+#  Dichotomizing 
+
++ X is a valued matrix, say 1 to 10 rating of strength of tie
++ Construct a matrix Y of ones and zeros s.t.
+   `\(y_{ij} = 1\)` if `\(x_{ij} &gt; 5\)`, and `\(y_{ij} = 0\)`  otherwise
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; EVE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LAU &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; THE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; BRE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; CHA &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; EVELYN &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; LAURA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; THERESA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BRENDA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; CHARLOTTE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; EVE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; LAU &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; THE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BRE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; CHA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; EVELYN &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; LAURA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; THERESA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BRENDA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; CHARLOTTE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+#  Symmetrizing 
+
++ When matrix is not symmetric, i.e., `\(x_{ij}\)` ≠  `\(x_{ji}\)`
++ Symmetrize various ways. Set `\(y_{ij}\)` and `\(y_{ji}\)`  to:
+
+	- Maximum(x_ij, x_ji): union  rule;
+	- Minimum(x_ij, x_ji): intersection rule;
+	- Average (x_ij+x_ji)/2	
+	- Lowerhalf:	choose `\(x_{ij}\)` when `\(i &gt; j\)` and `\(x_{ji}\)` otherwise
+	
+
+---
+#  Symmetrizing Example 
+
+What rule are we using here?
+
+&lt;img src="assets/img/figure38b.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+#  Matrix Multiplication
+
+- Matrix products are  not generally commutative (i.e., AB does not usually equal BA)
+- Notation: `\(C = AB\)`
+- only possible when the number of columns in A equals number of rows in B; these are said to be comformable. It is calculated as:
+
+`$$c_{ij} = \sum a_{ik} * b_{kj} \quad \forall k$$`
+
+---
+# Matrix multiplication example i
+
+&lt;img src="assets/img/figure38c.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+# Matrix multiplication example ii
+
+&lt;img src="assets/img/figure38d.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+#  Products of matrices &amp; their transposes 
+
+`\(XX^T\)` = product of matrix `\(X\)` by its transpose `\(X^T\)`
+
+- Computes sums of products of each pair of rows (cross-products)
+- Gives similarities among rows
+
+&lt;img src="assets/img/figure39b.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="assets/img/figure39.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+#  squaring an adjacency matrix 
+
+&lt;img src="assets/img/figure40.png" width="100%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

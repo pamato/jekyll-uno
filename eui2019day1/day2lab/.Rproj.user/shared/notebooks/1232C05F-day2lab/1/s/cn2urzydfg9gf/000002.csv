@@ -1,0 +1,5 @@
+"0","?blockmodel::REGE
+"
+"2","Error in find.package(if (is.null(package)) loadedNamespaces() else package,  : 
+  there is no package called ‘blockmodel’
+"
